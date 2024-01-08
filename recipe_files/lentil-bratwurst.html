@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="recipe_page">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Ayden Parsons</title>
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+  <!--NEEDS TO BE ../style.css or favicon to work-->
+  <link rel="icon" href="../picture_files/favicon-32x32.png">
+  <!--adds a favicon-->
+</head>
+
+
+<body>
+  <div class="topnav" style="font-weight:600;">
+    <a href="../index.html"><img src="../picture_files/favicon-32x32.png"></a>
+    <a href="../index.html">Home and Projects</a>
+    <a href="../cards.html">Poker Squares!</a>
+    <a href="../music.html">Music</a>
+    <a href="../cyber.html">Cybersecurity</a>
+    <a class="active" href="../cooking.html">Cooking</a>
+  </div>
+  <br>
+
+  <!-- Main Content -->
+  <div style="padding:5%">
+    <h1>
+      <!--Typed Title-->
+      <span id="typed"></span>
+      <p id="cursor" style="display:inline;font-size:larger">|</p>
+    </h1>
+
+    <br>
+    <h3>Ingredients</h3>
+    <p>
+      ~ 1 cup lentils <br>
+      ~ 4 Bratwurst (do NOT substitute with franks; the higher quality the better) <br>
+      ~ 2 garlic cloves <br>
+      ~ "Zest and Juice of 1 Lemon" (for simplicity: 2-4 tablespoons lemon juice) <br>
+      ~ Plenty of kosher salt <br>
+      ~ A Vegetable (cauliflower, shredded spinach [what I used], broccoli)<br>
+      Épices (du Mojo): 1/3 cup Olive Oil, generous Rosemary, 1/4 teaspoon red pepper flakes (can substitute with 1/8
+      teaspoon of cayenne, paprika, and chile powder each)
+    </p>
+
+    <h3>Recipe</h3>
+    <p>
+    <ol style="font-size:18px;">
+      <li>Cook lentils in simmering salted water (in a saucepan/pot), 20-25 minutes, then drain (do other steps as this
+        is happening)</li>
+      <li>Place generous rosemary, garlic, and pepper in a bowl</li>
+      <li>Heat 1/3 cup olive oil in a skillet until <a
+          href="https://www.reddit.com/r/AskCulinary/comments/dzz12c/newb_what_does_shimmering_mean_in_regards_to/">shimmering,
+          AKA incredibly hot [tip: if oil starts smoking it's good]</a>, and pour over aromatics in bowl, letting sit
+        for 10 minutes before stirring in the lemon zest/juice and some salt (this is the mojo).</li>
+      <li>Heat 2 tbsp olive oil in skillet, and cook Bratwursts until deeply browned and releasing some fat, about 7-9
+        minutes. Transfer to a plate.</li>
+      <li>Cook the lentils in the skillet on high heat for about 5+ minutes until crispy as desired</li>
+      <li>Put lentils in the pot, add vegetable to the mojo, and add to lentils. Add more salt and oil to taste.</li>
+      <li>Serve: Divide lentils amongst plates, and then put bratwurst on top.</li>
+    </ol>
+    </p>
+
+
+  </div>
+  <!------------------>
+
+  <footer style="font-family:monospace;text-align:right">
+    <hr>
+    <p style="text-align:left;font-size:120%"><i>"The credit belongs to the man who is actually in the arena...who's
+        place shall never be
+        with those cold and timid souls who neither know victory nor defeat."</i></p>
+    <h2><i>Ayden Parsons, 2024</i></h2>
+    <a href="../index.html">Back to Main Page</a>
+    <br><br>
+  </footer>
+
+
+</html>
+
+
+<script>
+  var i = 0;
+  var txt = 'Fried Lentils and Bratwurst, in Mojo';
+  var speed = 60;
+
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("typed").innerHTML += (txt.charAt(i) + "");
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+  typeWriter();
+</script>
