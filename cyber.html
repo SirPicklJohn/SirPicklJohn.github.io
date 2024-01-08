@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Ayden Parsons</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="picture_files/favicon-32x32.png">
+  <!--adds a favicon-->
+</head>
+
+
+<body>
+  <div class="topnav" style="font-weight:600;">
+    <a href="index.html"><img src="picture_files/favicon-32x32.png"></a>
+    <a href="index.html">Home and Projects</a>
+    <a href="cards.html">Poker Squares!</a>
+    <a href="music.html">Music</a>
+    <a class="active" href="cyber.html">Cybersecurity</a>
+    <a href="cooking.html">Cooking</a>
+  </div>
+  <br>
+
+  <!------------------
+  --- Main Content ---
+  -------------------->
+  <div style="padding:5%">
+    <h1>
+      <!--Typed Title-->
+      <span id="typed"></span>
+      <p id="cursor" style="display:inline;font-size:larger">|</p>
+    </h1>
+
+    <p id="blog_post_counter"></p>
+    <h3><a href="#blog_post_one">First Post</a></h3>
+    <h3><a href="#blog_post_two">Second Post</a></h3>
+    <h3><a href="#blog_post_three">Third Post</a></h3>
+
+    <br>
+    <div class="blog_post" id="blog_post_five" style="font-size:large">
+      <h2><i>October 31st & November 1st, 2023: The end of an EXTRAORDINARY Cybersecurity Awareness Month</i></h2>
+      <b><i>Happy Halloween, y Feliz Día de los Muertos :)</i><b>
+          <p>
+            Ah, where to start? Summits, CTFs, career development, and and immense amount of learning and skill
+            development...(don't worry, I'll keep it structured and semi-brief)
+            <br>
+          <ol> <b>Summits</b>
+            <li>Davenport University's Cybersecurity Celebration (and a career fair earlier in the day) - October 12th
+            </li>
+            <ul>
+              <li>I learned that <i>the one set path in Cybersecurity is that there is no path </i> (but that actual
+                work
+                experience
+                is important, and will "unlock" my other skills and experience in a sense). This was super enlightening
+                as I
+                learned about the different careers in Cybersecurity, and heard personal stories from professionals in
+                the
+                field.</li>
+            </ul>
+            <li>The Novi, Michigan HS Cyber Summit- October 19th</li>
+            <ul>
+              <li>Shaking hands with people from all levels of the industry, state, federal, and private, picking locks
+                with
+                a guy from GrrCon, learning that imposter syndrome affects even the very best, and learning from a
+                diverse
+                range of knowledgable speakers (re-affirming that nobody
+                questions the guy with the clipboard :) )
+            </ul>
+          </ol>
+          <br>
+          <ol> <b>CTFs</b>
+            <li>The National Cyber League's Fall 2023 Individual Game</li>
+            <ul>
+              <li>Putting my skills to the test in OSINT, Cryptography, Password Cracking, Log Analysis, Network Traffic
+                Analysis, Forensics, Scanning & Reconnaissance, and Enumeration and Exploitation</li>
+              <li>My highlights:</li>
+              <ul>
+                <li>Phenomenal performance in Scanning & Reconnaissance, using NMAP, poking with Telnet, Port Knocking
+                  (something new and interesting that I learned), listening with Tcpdump, or making sense of a large log
+                  file with a capture</li>
+                <img style="width: 45%; height: auto;" src="picture_files/cyber/october_2023/Port Knocking.PNG"></img>
+                <li>Great work in OSINT, doing anything from finding super old TLS certificates, to finding the Serial
+                  ID of
+                  a singular tree in the middle of New York City based off of nothing but an image</li>
+                <img style="width: 60%; height: auto;" src="picture_files/cyber/october_2023/tree-OSINT.PNG"></img>
+                <img style="width: 60%; height: auto;" src="picture_files/cyber/october_2023/tree-OSINT2.png"></img>
+              </ul>
+            </ul>
+            <li>Cipher Tech's Reverse Engineering, Digital Forensics, and Binary Reversal CTF - (ONE OF MY BEST
+              PERFORMANCES
+              IN CYBERSECURITY)</li>
+            <ul>
+              <li>This CTF provided a 32 and 64 bit binary of a "suspicious PC performance program", and the questions
+                beforehand included things like "what is the exact OS and version that made this binary? How long does
+                it
+                stay dormant [there was a C sleep function of 2 days and 9 hours that I bypassed with something called
+                "Dependency Injection", and then again later by manipulating memory addresses with the GNU Debugger]?
+                What
+                is the hostname [NOT IP ADDRESS, which would be easy with Wireshark] of the remote computer, and what
+                data
+                is being exfiltrated?". With only 5 questions, 14 days to complete the CTF, and NO idea where to even
+                start,
+                I was a little in over my head, BUT I was determined to use this as a learning experience to advance my
+                super-limited knowledge in Digital Forensics and RE.</li>
+              <li>Sure enough, this proved to be a SPECTACULAR learning experience:</li>
+              <ul>
+                <li>I spent two days learning Assembly, and going through NCL's "101 on Code Execution" to get some
+                  foundational knowledge on Reverse Engineering before I even touched the CTF challenges. <a>link1</a>
+                  <a>link2</a>
+                </li>
+                <li>Then, my third day, I spent a bunch of time, critical thinking brainpower, and coffee on solving
+                  EVERY
+                  challenge in
+                  the CTF in a blaze of glory. I made leaps and bounds in Reverse Engineering, and through hours of
+                  learning
+                  methods to bypass the sleep function in the provided binary, combing through the binary and countless
+                  memory addresses with GDB, using wireshark and miscellaneous forensics tools to find specific
+                  information.
+                </li>
+                <li>Some screenshots of what I did:</li>
+                <li>(From top to bottom: Using GDB to find out how long the binary lays dormant for. Then, Dependency
+                  Injection to bypass the binary's sleep function, and then capturing the subsequent connect command
+                  with wireshark. Next, displaying the GCC comment displaying what OS and version was used to compile
+                  the binary (and verifying with ChatGPT to provide related information that made me sure of the answer
+                  [the CTF records accuracy]). Next, using GDB to find and verify the hostname of the computer that the
+                  program was trying to connect to. Finally, I used Ghidra [for the first time, made easier due to my
+                  studying of assembly] to discover what data was being exfiltrated [this took a long time and combing
+                  through practically EVERY line of Assembly, multiple-times-over, and I kind of guessed that
+                  "keystrokes" were being sent because of the usage of /dev/input {which refers to keyboards and
+                  computer input devices}], and got the correct answer)
+              </ul>
+            </ul>
+            <img style="width: 65%; height: auto;" src="picture_files/cyber/october_2023/dormant.png"></img>
+            <img style="width: 50%; height: auto;"
+              src="picture_files/cyber/october_2023/dependency_injection.png"></img>
+            <img style=" width: 50%; height: auto;"
+              src=" picture_files/cyber/october_2023/dependency_wireshark_capture.png"></img>
+            <img style="width: 65%; height: auto;" src="picture_files/cyber/october_2023/gpt_resourcefulness.png"></img>
+            <img style="width: 65%; height: auto;" src="picture_files/cyber/october_2023/hostname_RE.png"></img>
+            <img style="width: 65%; height: auto;" src="picture_files/cyber/october_2023/Ghidra1.png"></img>
+            <img style="width: 65%; height: auto;" src="picture_files/cyber/october_2023/Ghidra2.png"></img>
+            <img style="width: 65%; height: auto;" src="picture_files/cyber/october_2023/Ghidra_lucky_guess.png"></img>
+          </ol>
+          <br>
+          <ol> <b>What's next?</b>
+            <li>Doubling my college load with two new Cyber Defense classes</li>
+            <li>Learning Arabic (I spent yesterday night learning, and got some incredible information) and spending
+              some
+              more time getting languages as things stay a LITTLE calmer before Christmas.</li>
+            <li>Improving work efficacy to balance these new classes.</li>
+            <li>Engaging in specialized self-education like I did for Reverse Engineering (because that was such a
+              phenomenal success), but for other topics in Cybersecurity (networking and creating a [virtual] home
+              network?
+              Website exploitation? Command injection? TryHackMe rooms? There's loads for me to learn, and I'll learn it
+              all
+              :) )</li>
+          </ol>
+          </p>
+
+
+          <br> <br> <i style="font-size:medium;font-weight:500">Tuesday, October 31st, 16:51 - November 1st, 15:21 (with
+            sleep and other activites) - Le future ne sera pas avec douleur, et la vérité est que ce n'est pas bien trop
+            dur. Laissez le temps fleurir حبيبي </i>
+          </p>
+
+    </div>
+
+    <br>
+    <div class="blog_post" id="blog_post_four" style="font-size:large">
+      <h2><i>September 26th and 27th, 2023: Blitzing to the Cyberstart Finish Line</i></h2>
+      <p>
+        These past two days, I decided to hit a <i>mega</i> sprint in these Cyberstart America/GHSCC CTF challenges.
+        It's amazing what one can do in so little time (a classic example of the deadly mix of Parkinson's Law and
+        Extreme Determination) :)
+        <br><br>
+        After thinking I had hit a brick wall, I solved just enough challenges in what was the current level to move on
+        to the next level, and to my surprise, just kept solving challenge after challenge (and, being level 11 and 12
+        out of
+        13, the challenges were MUCH more difficult, realistic, and multifaceted than any of the previous ones [and I
+        even solved some of them in unconventional directions than what the CTF was suggesting {when it still provided
+        very light hints/suggestions as to where to look in the beginner-level field manual. The last half of the
+        challenges in
+        level 11, and all of them in level 12, did not contain ANY sort of hinting whatsoever}]), and then unlocked the
+        <i>next</i> level, where I did the same thing until I was <i>finally</i> stopped in my cyber-slaughter of
+        challenges (which was okay, because it was late at night on September 27th, the final day of the competition).
+        Here is a highlight reel of what I did:<br>
+      <ul>
+        <li>Creating several Buffer Overflows</li>
+        <li>Fixing broken header hexes</li>
+        <li>Steganography</li>
+        <li>GNU Debugging (Proud Moment)</li>
+        <li>Cookie Manipulation (doing anything from SQL Injections with a cookie to bruteforcing session cookies with
+          scripting)</li>
+        <li>Log analysis</li>
+        <li>Fixing C and Assembly Code (and using quick and effective research skills)</li>
+        <li>Scripting (Lots and Lots of Scripting, and creating bash or python programs to hack both programs and
+          websites, unencrypt messages, and other brute forcing)</li>
+      </ul>
+      <br><br> Debugging a program and analyzing memory spaces to find the password:<br>
+      <img style="width: 50%; height: auto;" src="picture_files/cyber/debug1.PNG">
+      <img style="width: 60%; height: auto;" src="picture_files/cyber/debug2.PNG">
+      <br> <br>
+      Performing an SQL Injection with a cookie:<br>
+      <img style="width: 60%; height: auto;" src="picture_files/cyber/cookie_sql_injection.PNG">
+      <br><br>
+      Python Program, supplied with a list of characters, that takes each number in the list and reverses the process of
+      encoding a secret message in ASCII Code, and then subtracting every code by a certain number<br>
+      <img style="width: 50%; height: auto;" src="picture_files/cyber/ascii_script.PNG">
+      <br>^Notice the poker squares programs, which are the same ones I modified and used in this website! (In addition
+      to the other scripts, which I used to make my homework back in high school easier.)<br><br>
+      Quick Bash Script that takes a large number of encrypted passwords and pipes them into a program to find the right
+      one<br>
+      <img style="width: 40%; height: auto;" src="picture_files/cyber/brute_bash.PNG">
+      <br><br>
+      After jumping up to 97,500 points, do you think I'm in the top 10, and off to the final competition at the Cyber
+      Summit on October 18th? :)
+
+
+      <br> <br> <i style="font-size:medium;font-weight:500">Thursday & Friday, September 28th 16:36-16:57 (content),
+        Sept. 29th
+        15:31-16:38
+        (pictures) - J'aime ce boulot là :)</i>
+      </p>
+
+    </div>
+
+    <br>
+    <div class="blog_post" id="blog_post_three" style="font-size:large">
+      <h2><i>September 1st and 2nd, 2023: The [Wonderful] Start to the Season of Rigor...</i></h2>
+      <p>
+        SOME of what is and what will be going on in my computery-endeavors:
+      <ul>
+        <li>Signed up for the Fall 2023 NCL CTF</li>
+        <li>Joined OSINT-FR, and the DLI French Course</li>
+        <li>Hitting "high dollar" challenges in Cyberstart, racking up points for the final stretch of the GHSCC season
+        </li>
+      </ul>
+      <h3><u>Recent Governor's High School Cyber Challenge / Cyberstart Highlights:</u></h3>
+      <img style="width: 30%; height: auto;" src="picture_files/cyber/quickbrute_results.PNG"><br>
+      ^Results of my following bruteforce script (with explanations):
+      <br>----------------------------------------
+      <br>#!/bin/bash
+      <br># I chose to use bash after I had some weird trouble with python
+      <br># Prompt: The program "prog-l0bar" takes an argument that is a four digit secret code. Crack it with a script.
+      <br>
+      <br>for i in {0000..9999}
+      <br>do
+      <br>&emsp;./prog-l0bar $i #pipes output and/or variable without "|"
+      <br>done
+      <br># that's it!!
+      <br>----------------------------------------
+      <br>This was a super simple but cheeky-feeling way to finish a challenge :)
+      <br><br>
+      Some other things I've done to boost up to 82500 points (Rising 6000 or so points in just today, clearing the
+      entirety of HQ level 9 [no easy feat!], now beating 8th place in the final 2018 Girls Go Cyberstart competition [
+      though I don't know how that translates to the GHSCC], and being 72.98% done [181/248 total challenges] with
+      Cyberstart
+      America) include Steganography with binwalk, more reverse engineering, and two particularly fun challenges that
+      required some fun maneuvering:
+      <br>
+      <img style="width: 70%; height: auto;" src="picture_files/cyber/find+grep=king.PNG">
+      <br>^Here, I had to ssh into a foreign system and find a nondescript file that was created November 22nd, 2015 at
+      20:00 (with no other information). After multiple tries and research, I found that I could use the deadly "find |
+      grep" combo once again :) <br>
+      <img style="width: 70%; height: auto;" src="picture_files/cyber/find_the_img_in_elfs_p1..PNG">
+      <br>^The next challenge (the one I'm most proud of, and have probably cheesed/circumvented the hardest) required
+      me to
+      ssh into a remote system (remember, this gets rid of most fancy tools on your home system), and find an image file
+      in a ginormous mix of junk files (with all of the files ends stripped).
+      <br><br>
+      This was no beginner level challenge, and you couldn't just cheesily use "strings" or "grep" to find some string
+      that searched the file system for 'flag:' in one of the files, as the flag is in the actual rendered image. So,
+      instead, I cheesily used "file -i *" to find the odd one out in the folder with all the junk files in it. That was
+      part one of the challenge...
+      <br>
+      <img style="width: 70%; height: auto;" src="picture_files/cyber/find_the_img_in_elfs_p2_results.PNG">
+      <br>
+      ^Part two of the challenge required me actually rendering the image file to get the flag. But, because I was ssh'd
+      into a limited remote system, it wasn't as easy as opening it with xdg-open, right clicking on it, or using an
+      image viewer. So, I had to go throught he process of learning how to use the "scp" command to go from my home
+      system, input the exact location of the file I just found with "file -i *" on the remote system, and take it back
+      to my home system, where I could then render it with xdg-open. Voilà, the flag is the serial number (SN:0207F9) :)
+      <br><br>
+
+      <h3><u>OSINT-FR and DLI:</u></h3>
+      <a href="https://osintfr.com/en/home/">OSINT-FR Home Page Link</a><br>
+      I joined a global community of people curious about OSINT, both beginners and (primarily) super-whiz professionals
+      and cyber ninjas, who do everything from develop powerful tools, share resources (online courses, neat articles,
+      etc), tackle issues (e.g. disinformation, child abuse), and more! Au moins, ils parlent Français, et je peux les
+      utiliser pour l'améliorer (particulierement avec la vocabulaire de Cybersécurité, et le web).
+      <br><br>
+      I also found some free resources online due to some OSINT of my own :)
+      <br>Those being free "FSI" (Foreign Service Institute) and "DLI" (Defense Language Institute) resources online for
+      French, Spanish, and a myriad of other languages. I researched and judged the DLI course to suit my needs more,
+      and will be partaking in that for the foreseeable future (it's designed to be 15-20 work weeks of 6 hour class
+      days on the language).
+
+      <h3><u>Fall 2023 NCL CTF:</u></h3>
+      <a href="https://nationalcyberleague.org/">NCL Home Page Link</a><br>
+      Having participated in the Spring and Fall 2021 Individual Games, and the Fall 2021 Team Game, I can tell you that
+      NCL is no joke. It has beginner to ultra-hard challenges in OSINT, Log Analysis, Network Traffic Analysis,
+      Cryptography, Scanning, Forensics, Password Cracking, Enumeration and Exploitation, and Web Application Security
+      (website hacking). This is going to be quite the competition, with me knowing much, much, MUCH more than I did
+      than the last time I participated in this CTF. It's going to be fun :)
+
+      <br> <br> <i style="font-size:medium;font-weight:500">Saturday, 21:30 - J</i>
+      </p>
+
+    </div>
+
+    <br>
+    <div class="blog_post" id="blog_post_two">
+      <h2><i>June 29th, 2023: The GHSCC CTF, Cyberstart America, Bruteforce Hacking, and fun :)</i></h2>
+      <p>
+        <img style=" width: 60%; height: auto;" src="picture_files/cyber/hydra_attack.jpg"><br>
+        Over the last few days (in addition to lots and lots of Eagle Rank work), I've been brushing up on my cyber
+        skills in the <a href="https://ghscc-michigan.cyberstart.com/">"Michigan Governor's High School Cyber
+          Challenge"</a> (GHSCC [run on the Cyberstart America platform]).
+        <br>
+        I had a lot of extra points from previous Cyberstart America seasons (where I scored high enough to gain access
+        to the NCSF CTF, then won access to the SEC275: Foundations course from the SANS Institute [then passing the
+        final exam, becoming certified]), but through the past couple of days I've jumped from 30,000 or so points, to
+        over 52,000 points (each challenge at the levels I'm currently playing at are 600-700 points).
+        <br>In the GHSCC, the top 10 teams (I'm flying solo :) ) in the Cyberstart Game, when the season ends, will win
+        access to the 2023 SANS Core NetWars Cyber Range//CTF (which I have a keen eye upon winning [not really for any
+        good reason, except it's {hopefully} more intense than anything I've done in a cyber competition before]). I
+        looked up previous high scores from Cyberstart America to see how many points I needed to earn to be
+        competitive, and found this photo: <br><img style="width: 50%; height:auto;"
+          src="https://its.syr.edu/wp-content/uploads/2020/03/Cyberstart-Round-2-5.png"><br>
+        <br>From doing socket programming with Python, encoding and decoding, decrypting, website hacking, brute
+        force password hacking with Hydra (referencing the photo at the top of this post), brute force zipfile cracking
+        and directory scanning with Python scripts, to SQL and command injection, I've been putting in the work.
+
+        <br> <br> <i style="font-size:medium;font-weight:500">Thursday, 20:42 - J'aime utiliser les ordinateurs comme ça
+          pour
+          m'amuser.</i>
+
+        <br><br><br>21:40 - I just found the <a
+          href="https://medium.com/girls-go-cyberstart/top-100-overall-final-e232859e1913">final list</a> for a series
+        of Cyberstart ranking lists I found earlier, and this is suddenly terrifying. Top score is 117,700 (approx 170
+        challenges, give or take a few), and score ten is 75,900 (DANG). I have a lot more work ahead of me ;-; (but, as
+        always, <i>"we do not do these things because they are easy; we do them, because they are hard."</i>)
+      </p>
+    </div>
+
+    <br>
+    <div class="blog_post" id="blog_post_one">
+      <h2><i>June 22nd, 2023</i></h2>
+      <p>
+        Finally got around to making my Cybersecurity-blog-esque page on my personal website! This page will show you
+        what sorts of things I've been up to in the field of Cybersecurity / IT (competing in CTFs, creating projects,
+        cracking boxes in THM, etc.) <br> I'll think that I will also include a linked page that has a bunch of tools
+        and resources you can go to (e.g. <a href="https://gchq.github.io/CyberChef/">Cyberchef</a>, the <a
+          href="https://www.boxentriq.com/code-breaking/cipher-identifier">Boxentriq cipher identifier</a>, and <a
+          href="https://www.hackerone.com/ethical-hacker/100-hacking-tools-and-resources">other
+          things</a> to consolidate your resources and knowledge).
+        <br> <br> <i style="font-size:medium;font-weight:500">Thursday, 12:56 - Voila, et le profitez!<br>"Vaut mieux
+          vivre avec des remords, qu'avec des regrets...c'est ça, le secret."</i>
+      </p>
+      <!--condense this for the safety of the programmer's brain (also, should I make a kind of contents-list to offer quick navigation, as this page/blog gets more populated?)-->
+
+
+    </div>
+
+    <a href="#blog_post_counter" style="font-size: 20px; color:aliceblue;">~ back to top ~</a>
+
+
+    <!--condense this for the safety of the programmer's brain (also, should I make a kind of contents-list to offer quick navigation, as this page/blog gets more populated?)-->
+
+
+  </div>
+
+  </div>
+  <!------------------
+  --------------------
+  -------------------->
+
+  <footer style="font-family:monospace;text-align:right">
+    <hr>
+    <p style="text-align:left;font-size:120%"><i>"The credit belongs to the man who is actually in the arena...who's
+        place shall never be
+        with those cold and timid souls who neither know victory nor defeat."</i></p>
+    <h2><i>Ayden Parsons, 2023</i></h2>
+    <a href="index.html">Back to Main Page</a>
+    <br><br>
+  </footer>
+
+
+</html>
+
+
+<script>
+  var i = 0;
+  var txt = 'All about Cybersecurity (my projects, journey, knowledge, etc.)';
+  var speed = 40;
+
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("typed").innerHTML += (txt.charAt(i) + "");
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+  typeWriter();
+</script>
+
+<script>
+  // Get all elements with class name "blog_post"
+  const elements = document.getElementsByClassName("blog_post");
+
+  // Count the number of elements
+  const count = elements.length;
+
+  // Find the div element to display the count
+  const counterElement = document.getElementById("blog_post_counter");
+
+  // Update the content of the div element with the count
+  counterElement.textContent = "Current Number of Blog Posts: " + count;
+</script>

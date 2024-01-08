@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Ayden Parsons</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="picture_files/favicon-32x32.png">
+  <!--adds a favicon-->
+</head>
+
+
+<body>
+  <div class="topnav" style="font-weight:600;">
+    <a href="index.html"><img src="picture_files/favicon-32x32.png"></a>
+    <a class="active" href="#home">Home and Projects</a>
+    <a href="cards.html">Poker Squares!</a>
+    <a href="music.html">Music</a>
+    <a href="cyber.html">Cybersecurity</a>
+    <a href="cooking.html">Cooking</a>
+  </div>
+  <br>
+
+  <div style="padding:5%">
+    <!--<div id="section-one">-->
+    <a id="Title">
+      <h2 style="color:red"> <i>Hello! My name is...</i></h3>
+        <h2 style="color:white"> <i>Bonjour! Je m'appelle...</i></h3>
+          <h2 style="color:deepskyblue"> <i>Здравствуйте! Меня зовут...</i></h3>
+            <h1 style="font-size: 130px; color:lightgrey; font-family:'Times New Roman', Times, serif;"> Ayden Parsons
+            </h1>
+    </a>
+    <!--</div>-->
+
+    <h1 style="font-size: 40px;">
+      <span id="typed">aydenparsons@website:~$ </span>
+      <!--^originally ~/aydenparsons$->
+      <!--Typed Effect-->
+      <p id="cursor" style="display:inline;font-size: 120%">|</p>
+      <!--HAH HOURS WERE LOST EDITING JAVASCRIPT WHEN THIS WOULD'VE WORKED JUST FINE-->
+    </h1>
+    <hr>
+    <!--Horizontal Line Break-->
+    <!-- ----------------------------------------------------------- -->
+
+    <!-- Future: how about we make some fancy effects fly up when hovering over? -->
+    <!-- ------------------ PROJECTS ------------------------ -->
+    <!--<h1 style="font-size:200%">Projects and Links :</h1>
+    <div id="project-list-item">
+      <ul>
+        <li>Coding Projects
+          <ul>
+            <li><a href="cards.html" id="project-list-item">Automatic Poker Squares Scorer ~{ Python, Javascript,
+                HTML,CSS}</a></li>
+          </ul>
+        </li>
+        <li><a href="https://sites.google.com/view/aydenparsons" id="project-list-item">Personal Google Sites Website ~{
+            Google Suite }</a></li>
+        <li><a href="cyber.html" id="project-list-item">Cybersecurity Blog</a></li>
+      </ul>
+    </div>-->
+    <!-- ------------------ -------- ------------------------ -->
+  </div>
+
+
+  <!--footer-->
+  <footer style="font-family:monospace;text-align:right">
+    <hr>
+    <p style="text-align:left;font-size:120%"><i>"The credit belongs to the man who is actually in the arena...who's
+        place shall never be
+        with those cold and timid souls who neither know victory nor defeat."</i></p>
+    <h2><i>Ayden Parsons, 2023</i></h2>
+    <a href="index.html">Back to Main Page</a>
+    <br><br>
+  </footer>
+</body>
+
+
+</html>
+
+
+<script>
+  var i = 0;
+  var txt = 'I am an avid student-for-life, a strategist, a tech-wiz, a traveller, and a card player with wicked tactics and a french press.';
+  var speed = 40;
+
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("typed").innerHTML += (txt.charAt(i) + "");
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+  typeWriter();
+</script>
+
+<!--For easy access to replit: <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>-->
+
+
+<!-- [put in body]
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  
+  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script> -->

@@ -1,0 +1,233 @@
+html {
+  height: 100%;
+  width: 100%;
+  cursor: url('picture_files/pirate.cur'), auto
+}
+
+a:hover {
+  cursor: url('/picture_files/pointing_glove.cur'), auto
+}
+
+body {
+  padding: 0%;
+  background-color: black;
+  color: limegreen;
+}
+
+p {
+  font-size: 14pt;
+}
+
+#project-list-item {
+  font-size: 30px;
+}
+
+#project-list-item:visited {
+  color: #b400b4;
+}
+
+#project-list-item:hover {
+  animation: project-list-item-animation 1s ease infinite;
+}
+
+#project-list-item:active {
+  color: red;
+}
+
+@keyframes project-list-item-animation {
+  50% {
+    opacity: .75;
+  }
+}
+
+/*
+#project-list-item:hover {
+  cursor: url('pirate.cur'),auto;
+} */
+
+.cardInput {
+  font-family: monospace;
+  font-weight: bold;
+  color: red;
+  background-color: black;
+}
+
+/*
+#typed {
+  font-size: 120%;
+} */
+
+#Title {
+  font-family: sans-serif;
+  font-size: 130%;
+  text-align: center;
+}
+
+#cursor {
+  font-weight: 900;
+  color: #ff0000;
+  animation: cursor_blink .75s step-end infinite;
+}
+
+@keyframes cursor_blink {
+  50% {
+    opacity: 0;
+  }
+}
+}
+
+/*** START NAVIGATION ***/
+/* Top Navigation */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #daab01;
+  color: #121212;
+}
+
+/* sub Navigation */
+.subnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.subnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.subnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.subnav a.active {
+  background-color: #daab01;
+  color: #121212;
+}
+
+/** End Navigation Styling **/
+
+/* cooking.html */
+a.recipe_link:link {
+  color: hotpink
+}
+
+a.recipe_link:visited {
+  color: red
+}
+
+a.recipe_link:hover {
+  color: #d26577
+}
+
+/* end cooking.html */
+
+/* music.html */
+#jazz_links {
+  font-size: 18pt;
+  /* should make it so that each specific section shoots out hacker, jazz, etc. icons based on the playlist group */
+}
+
+#jazz_links:hover {
+  animation: project-list-item-animation 1s ease infinite;
+}
+
+#music_links {
+  font-size: 18pt;
+  margin: auto;
+  border-radius: 25px;
+  border: 2px solid #ffffff;
+  padding: 20px;
+  width: auto;
+  height: auto;
+}
+
+#music_links:visited {
+  color: #b400b4;
+}
+
+#music_links:hover {
+  color: #e8a6a6;
+  animation: music_links_animation 6s ease infinite;
+}
+
+#music_links:active {
+  color: red;
+}
+
+
+
+@keyframes music_links_animation {
+  0% {
+    background-color: #280000;
+  }
+
+  25% {
+    background-color: #1e1e00;
+  }
+
+  50% {
+    background-color: #000064;
+  }
+
+  75% {
+    background-color: #002800;
+  }
+
+  100% {
+    background-color: #280000;
+  }
+}
+
+/* end music.html styling */
+
+#project-list-item:visited {
+  color: #b400b4;
+}
+
+#project-list-item:hover {
+  animation: project-list-item-animation 1s ease infinite;
+}
+
+#project-list-item:active {
+  color: red;
+}
+
+@keyframes project-list-item-animation {
+  50% {
+    opacity: .75;
+  }
+}
+
+/* cyber.html */
+.blog_post {
+  background-color: #a2771a;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: #5c0000;
+  border-style: groove;
+  border-color: #40006b;
+  border-width: 4px;
+}

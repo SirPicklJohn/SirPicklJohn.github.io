@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="recipe_page">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Ayden Parsons</title>
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+  <!--NEEDS TO BE ../style.css or favicon to work-->
+  <link rel="icon" href="../picture_files/favicon-32x32.png">
+  <!--adds a favicon-->
+</head>
+
+
+<body>
+  <div class="topnav" style="font-weight:600;">
+    <a href="../index.html"><img src="../picture_files/favicon-32x32.png"></a>
+    <a href="../index.html">Home and Projects</a>
+    <a href="../cards.html">Poker Squares!</a>
+    <a href="../music.html">Music</a>
+    <a href="../cyber.html">Cybersecurity</a>
+    <a class="active" href="../cooking.html">Cooking</a>
+  </div>
+  <br>
+
+  <!-- Main Content -->
+  <div style="padding:5%">
+    <h1>
+      <!--Typed Title-->
+      <span id="typed"></span>
+      <p id="cursor" style="display:inline;font-size:larger">|</p>
+    </h1>
+
+    <br>
+    <h3>Ingredients</h3>
+    <p>
+      ~ (Aged) Venison Steak, cut into strips<br>
+      ~ 1 Onion, chopped<br>
+      ~ 1 Pack of Sliced Mushrooms, chopped<br>
+      Épices: Salt & Pepper
+    </p>
+
+    <h3>Recipe</h3>
+    <p>
+    <ol style="font-size:18px;">
+      <li>While sautéing onions and mushrooms in oil over medium heat, oil up slabs of venison steak, and spice them
+        with salt
+        and pepper.</li>
+      <li>Before the mushrooms and onions are done, add the venison steak strips, and cook until finished.</li>
+    </ol>
+    </p>
+
+
+  </div>
+  <!------------------>
+
+  <footer style="font-family:monospace;text-align:right">
+    <hr>
+    <h2><i>Ayden Parsons, 2023</i></h2>
+    <a href="../index.html">Back to Main Page</a>
+    <br><br>
+  </footer>
+</body>
+
+
+</html>
+
+
+<script>
+  var i = 0;
+  var txt = 'Aged Venison Steak, Sautéed in Mushrooms and Onions';
+  var speed = 40;
+
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("typed").innerHTML += (txt.charAt(i) + "");
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+  typeWriter();
+</script>

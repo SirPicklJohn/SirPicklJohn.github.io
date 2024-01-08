@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Ayden Parsons</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="picture_files/favicon-32x32.png">
+  <!--adds a favicon-->
+
+  <!--
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
+  <py-config>
+    plugins = [
+    "https://pyscript.net/latest/plugins/python/py_tutor.py"
+    ]
+    [[fetch]]
+    files = ["./poker_squares.py"]
+  </py-config>-->
+
+</head>
+
+
+<body>
+  <div class="topnav" style="font-weight:600;">
+    <a href="index.html"><img src="picture_files/favicon-32x32.png"></a>
+    <a href="index.html">Home and Projects</a>
+    <a class="active" href="cards.html">Poker Squares!</a>
+    <a href="music.html">Music</a>
+    <a href="cyber.html">Cybersecurity</a>
+    <a href="cooking.html">Cooking</a>
+  </div>
+  <br>
+
+  <div style="padding:5%">
+    <br>
+    <h1>
+      <span id="typed"></span>
+      <!--Typed Effect-->
+      <p id="cursor" style="display:inline;font-size:larger">|</p>
+      <!--HAH HOURS WERE LOST EDITING JAVASCRIPT WHEN THIS WOULD'VE WORKED JUST FINE-->
+    </h1>
+    <h3>Input the rows and columns of the finished board, and indicate if there is a flush or straight, respectively.
+      (e.g. "tJQKAyy" or "245J4nn"))<br><a href="https://en.wikipedia.org/wiki/Poker_squares">How to Play Link</a></h3>
+
+    <h4 style="text-align: right;">My current high score: 63</h4>
+    <!--<img src="picture_files/current_poker_squares_highscore.jpg" style="max-width: 300px; height: auto; float: right;">-->
+
+    <div id="input_spaces">
+      <h4 style="text-align: right;">Current known high score: 78 (AW)</h4>
+      <h4>Rows</h4>
+      <input name="rowOneInput" type="text" maxlength="512" id="rowOneInput" class="cardInput" />
+      <br>
+      <input name="rowTwoInput" type="text" maxlength="512" id="rowTwoInput" class="cardInput" />
+      <br>
+      <input name="rowThreeInput" type="text" maxlength="512" id="rowThreeInput" class="cardInput" />
+      <br>
+      <input name="rowFourInput" type="text" maxlength="512" id="rowFourInput" class="cardInput" />
+      <br>
+      <input name="rowFiveInput" type="text" maxlength="512" id="rowFiveInput" class="cardInput" />
+
+      <h4>Columns</h4>
+      <input name="columnOneInput" type="text" maxlength="512" id="columnOneInput" class="cardInput" />
+      <br>
+      <input name="columnTwoInput" type="text" maxlength="512" id="columnTwoInput" class="cardInput" />
+      <br>
+      <input name="columnThreeInput" type="text" maxlength="512" id="columnThreeInput" class="cardInput" />
+      <br>
+      <input name="columnFourInput" type="text" maxlength="512" id="columnFourInput" class="cardInput" />
+      <br>
+      <input name="columnFiveInput" type="text" maxlength="512" id="columnFiveInput" class="cardInput" />
+
+      <br>
+      <input type="button" value="Calculate Score!" onclick="poker_squares();"
+        style="background-color:black;color:skyblue">
+      <br><br>
+    </div>
+
+    <span id="bone"></span>
+    <br>
+    <hr>
+    <br>
+    <p style="font-size:16pt">
+      <i style="font-size:14pt">Created June 2023</i><br>
+      "Poker Squares" is fun solo card game that I found awhile ago; it's simple, smart, and fun. You flip down five
+      cards
+      face up as your starting row, and pull one card from the deck to add to a column of your choice, with the goal
+      being
+      to make a 5x5 board of good horizontal and vertical poker hands. (Another way [the classic way] to play is just by
+      placing each card you pull down <i>anywhere</i> in the 5x5 grid that doesn't already have a card in it)
+      <br><br>
+      The only problem was that manually scoring the game and scouring the board for hands took much longer than
+      actually
+      playing the game, so I promptly decided to make a program that would do it for me.
+      <br><br>
+      I spent about 4-5 hours making a python script that had the hands-to-be-scored hard-coded into it, which worked
+      superbly, then
+      I
+      made another python program that had CLI functionality (with the ability to input the rows and columns [the poker
+      hands] as
+      command-line parameters), and then putting my python script on a webpage (first using pyscript, then abandoning
+      that
+      for javascript with the help of <a href="https://extendsclass.com/python-to-javascript.html">a python to
+        javascript
+        converter [with minor tweaks]</a>), AND FINALLY modifying the web page/script so that I could input the hands on
+      a
+      website, press "calculate scores", and have it all done for me!
+      <br><br>
+      <i>Voila.</i>
+    </p>
+    <!--warning: element contents are overwritten each poker_squares() function call-->
+
+    <!-- <section class="pyscript">
+    Placeholder for Poker Squares: <br>
+    This is the current date and time, as computed by Python:
+    <py-script src="poker_squares.py">
+      import subprocess
+      import sys
+      word = "8348tnn 9348Ann 7279Jnn t57JQnn 656JKnn 897t6ny 33255nn 44776nn 889JJnn
+      tAJQKny"
+      print("poker_squares.py " + word)
+      os.system('poker_squares.py {}'.format(word))
+    </py-script>
+  </section>-->
+
+    <!--
+    NEXT STEPS:
+      - Create HTML Text Objects for Input
+      - Create HTML Button to Input into Javascript
+      - Assign appropriate values for rows and columns into Javascript file using "getElementById" function
+  -->
+
+  </div>
+
+  <footer style="font-family:monospace;text-align:right">
+    <hr>
+    <p style="text-align:left;font-size:120%"><i>"The credit belongs to the man who is actually in the arena...who's
+        place shall never be
+        with those cold and timid souls who neither know victory nor defeat."</i></p>
+    <h2><i>Ayden Parsons, 2023</i></h2>
+    <a href="index.html">Back to Main Page</a>
+    <br><br>
+  </footer>
+</body>
+
+
+</html>
+
+<script>
+
+  function poker_squares() {
+    var aces, cards, column1, column2, column3, column4, column5, eights, fives, fours, jacks, kings, nines, queens, row1, row2, row3, row4, row5, sevens, sixes, tens, threes, total_score, twos;
+
+    total_score = 0;
+    row1 = document.getElementById('rowOneInput').value; //appended letters (No or Yes) equal flush and straight, respectively
+    row2 = document.getElementById('rowTwoInput').value;
+    row3 = document.getElementById('rowThreeInput').value;
+    row4 = document.getElementById('rowFourInput').value;
+    row5 = document.getElementById('rowFiveInput').value;
+    column1 = document.getElementById('columnOneInput').value;
+    column2 = document.getElementById('columnTwoInput').value;
+    column3 = document.getElementById('columnThreeInput').value;
+    column4 = document.getElementById('columnFourInput').value;
+    column5 = document.getElementById('columnFiveInput').value;
+    twos = 0;
+    threes = 0;
+    fours = 0;
+    fives = 0;
+    sixes = 0;
+    sevens = 0;
+    eights = 0;
+    nines = 0;
+    tens = 0;
+    jacks = 0;
+    queens = 0;
+    kings = 0;
+    aces = 0;
+    cards = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    function scorer(line) {
+      for (var i, _pj_c = 0, _pj_a = line, _pj_b = _pj_a.length; _pj_c < _pj_b; _pj_c += 1) {
+        i = _pj_a[_pj_c];
+
+        if (i === "2") {
+          cards[0] += 1;
+        }
+
+        if (i === "3") {
+          cards[1] += 1;
+        }
+
+        if (i === "4") {
+          cards[2] += 1;
+        }
+
+        if (i === "5") {
+          cards[3] += 1;
+        }
+
+        if (i === "6") {
+          cards[4] += 1;
+        }
+
+        if (i === "7") {
+          cards[5] += 1;
+        }
+
+        if (i === "8") {
+          cards[6] += 1;
+        }
+
+        if (i === "9") {
+          cards[7] += 1;
+        }
+
+        if (i === "t") {
+          cards[8] += 1;
+        }
+
+        if (i === "J") {
+          cards[9] += 1;
+        }
+
+        if (i === "Q") {
+          cards[10] += 1;
+        }
+
+        if (i === "K") {
+          cards[11] += 1;
+        }
+
+        if (i === "A") {
+          cards[12] += 1;
+        }
+
+        if (i === "y" || i === "n") {
+          break;
+        }
+      }
+    }
+
+    function LINE_SCORER(line) {
+      var flushes, four_of_a_kinds, full_houses, line_score, pairs, royal_flushes, straight_flushes, straights, three_of_a_kinds, x;
+      royal_flushes = false;
+      straight_flushes = false;
+      four_of_a_kinds = 0;
+      full_houses = 0;
+      flushes = false;
+      straights = false;
+      three_of_a_kinds = 0;
+      pairs = 0;
+      line_score = 0;
+      scorer(line);
+
+      if (cards[8] === 1 && cards[9] === 1 && cards[10] === 1 && cards[11] === 1 && cards[12] === 1 && line[5] === "y") {
+        royal_flushes = true;
+        console.log("ROYAL FLUSH!");
+      } else {
+        if (line[5] === "y" || line[6] === "y") {
+          if (line[5] === "y" && line[6] === "y") {
+            straight_flushes = true;
+          } else if (line[5] === "y" || line[6] === "y") {
+            if (line[5] === "y" || line[6] === "y") {
+              if (line[5] === "y") {
+                flushes = true;
+              }
+              if (line[6] === "y") {
+                straights = true;
+              }
+            }
+          }
+        }
+      }
+
+      x = 0;
+
+      while (x < cards.length) {
+        if (cards[x] === 4) {
+          four_of_a_kinds += 1;
+          break;
+        }
+        if (cards[x] === 3) {
+          three_of_a_kinds += 1;
+        }
+        if (cards[x] === 2) {
+          pairs += 1;
+        }
+
+        x += 1;
+      }
+
+      if (royal_flushes === true) {
+        line_score += 30;
+      } else {
+        if (straight_flushes === true) {
+          line_score += 30;
+        } else {
+          if (flushes === true || straights === true) {
+            if (flushes === true) {
+              line_score += 5;
+            }
+
+            if (straights === true) {
+              line_score += 12;
+            }
+          }
+        }
+      }
+
+      if (four_of_a_kinds === 1) {
+        line_score += 16;
+      }
+
+      if (three_of_a_kinds === 1 && pairs === 1) {
+        full_houses += 1;
+        line_score += 10;
+      } else {
+        if (three_of_a_kinds !== 0 || pairs !== 0) {
+          if (three_of_a_kinds === 1) {
+            line_score += 6;
+          }
+
+          if (pairs === 2) {
+            line_score += 3;
+          } else {
+            if (pairs === 1) {
+              line_score += 1;
+            }
+          }
+        }
+      }
+
+      console.log("\nLine Values: " + line.toString());
+      console.log("Royal Flush? " + royal_flushes.toString());
+      console.log("Straight Flush? " + straight_flushes.toString());
+      console.log("Four of a Kinds: " + four_of_a_kinds.toString());
+      console.log("Full Houses: " + full_houses.toString());
+      console.log("Flush? " + flushes.toString());
+      console.log("Straight? " + straights.toString());
+      console.log("Three of a Kinds: " + three_of_a_kinds.toString());
+      console.log("Pairs: " + pairs.toString());
+      console.log("## Total Line Score: " + line_score.toString() + " ##");
+      total_score += line_score;
+
+      for (var z, _pj_c = 0, _pj_a = cards, _pj_b = _pj_a.length; _pj_c < _pj_b; _pj_c += 1) {
+        z = _pj_a[_pj_c];
+        cards = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+      }
+    }
+
+    new LINE_SCORER(row1);
+    new LINE_SCORER(row2);
+    new LINE_SCORER(row3);
+    new LINE_SCORER(row4);
+    new LINE_SCORER(row5);
+    new LINE_SCORER(column1);
+    new LINE_SCORER(column2);
+    new LINE_SCORER(column3);
+    new LINE_SCORER(column4);
+    new LINE_SCORER(column5);
+
+
+    document.getElementById("bone").innerHTML = ("\n~~~~~~~~~~\n FINAL SCORE: " + total_score.toString() + "\n~~~~~~~~~~");
+  } //done do "...innerHTML += ..." because that causes a bunch more outputs on each function call/button push
+
+</script>
+
+<script>
+  var i = 0;
+  var txt = 'Automatic Poker Squares Scorer';
+  var speed = 40;
+
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("typed").innerHTML += (txt.charAt(i) + "");
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+  typeWriter();
+</script>
