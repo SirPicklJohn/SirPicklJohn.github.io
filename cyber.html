@@ -36,7 +36,71 @@
     <h3><a href="#blog_post_one">First Post</a></h3>
     <h3><a href="#blog_post_two">Second Post</a></h3>
     <h3><a href="#blog_post_three">Third Post</a></h3>
+    <h3><a href="#blog_post_four">Fourth Post</a></h3>
+    <h3><a href="#blog_post_five">Fifth Post</a></h3>
 
+<br>
+    <div class="blog_post" id="blog_post_five" style="font-size:large">
+      <h2><i>February 15th: A strong start to the new year, and leaps in cybersecurity</i></h2>
+      <b><i>Big server projects, winning SANS GSEC, and intense learning and skill development. Through hard work, I've made it this far.</i><b>
+      <b><i>Working cybersecurity for the government? 5 certifications within a year? Through hard work, I'll get it done.</i><b>
+          <p>
+            Ah, where to start? Summits, CTFs, career development, and and immense amount of learning and skill
+            development...(don't worry, I'll keep it structured and semi-brief)
+            <br>
+          <ol> <b>Highlighted Learning Projects of the Year (so far)</b>
+            <li>Created an multi-layered defense for a "Data Backup and Hacking Operations Kali Linux SSH Server", accessible from the Internet, finished February 1st
+            </li>
+            <ul> SSH
+              <li>Configured a non-standard SSH port, for resiliency against port scanning</li>
+              <li>Only able to logon as a specific user, and NOT with a password (i.e., can't logon as admin, root, anonymous, etc., and can't login with a password [see next defense layer])</li>
+              <li>Required to use 521-bit encrypted ECDSA-private key/identity file, with the password to decrypt it</li>
+              <li>Applied principle of least privilege to the ssh account with group and user permissions, and disabled it from using 'su' (switching user accounts) with PAM (pluggable authentication modules) (<a href="https://access.redhat.com/solutions/64860">tutorial link</a>)</li>
+            </ul>
+            <ul> Storage Administration
+              <li>Added a 2TB drive to my server</li>
+              <li>Used parted to change file table from MFT to GPT (<a href="https://phoenixnap.com/kb/linux-create-partition#ftoc-heading-1">here's a great tutorial on this)</a>)</li>
+              <li>Used parted to make new disk partition, and added an NTFS file system to that partition</li>
+              <li>Added an entry to /etc/fstab so it would automatically mount at boot. (Tutorials and Information <a href="https://www.redhat.com/sysadmin/etc-fstab">LINK-ONE</a>, <a href="https://www.howtogeek.com/38125/htg-explains-what-is-the-linux-fstab-and-how-does-it-work/">LINK-TWO</a>)</li>
+              <li>To be troubleshooted: Execute permissions not allowed on (despite 'exec' flag in fstab)</li>
+            </ul>
+            <li>Created a Corporate Virtual Client-Server Linux Network, from scratch (that's a mouthful)
+            </li>
+            <ul>
+              <li>Installed AlmaLinux ISO, and installed the OS on several VMWare virtual computers. Finished earlier in the year.</li>
+              <li>Network connectivity and troubleshooting with nmcli (no tools like netstat, nc, or even ifconfig [I used skinny, GUI-less 8GB ISO image to limit space])</li>
+              <li>Installing and hardening SSH (disabling root, having an ssh user, nonstandard port, limited simultaneous session-count)</li>
+              <li>Created several user accounts, groups, and folders to simulate department users/resources on a corporate network. Applied permissions and ACLs (access control lists, seen with getfacl and set with setfacl) to apply principle of least privilege. Made an Admin account that alone could use 'sudo', but still needed to use password authentication for privileged actions.</li>
+              <li>Installed and hardened programs like Postfix mail and Apache Web Server (even using TLS encryption and firewalls to force port 443 and HTTPS connections only)</li>
+              <li>Set password policies with PAM and /etc/login.defs because I like learning :) (note, login.defs is usually overwritten by PAM, but provides a backup policy with administration directly over the /etc/shadow file)</li>
+            </ul>
+            <li>Learned how to do file carving in a digital forensics class
+            </li>
+            <li>Learned how to do <a href="https://www.youtube.com/watch?v=4Iu1cC7_zbE">network packet dissection by hand</a>
+            </li>
+            <li>Started a plan to get four certifications for the price of one (I spared you the details but this is the high-level plan):</li>
+            <ol>
+              <li>Do Google IT Support Professional Certificate Course (prepares me for CompTIA A+ and gives a certification)</li>
+              <li>Do CompTIA A+, and <a href="https://www.credly.com/org/coursera/badge/google-comptia-dual-credential">earn the IT support Profession and A+ Dual Credential</a></li>
+              <li>Do Google Cybersecurity Professional Certificate Course (prepares me for CompTIA Security+ and gives a certification)</li>
+              <li>Do CompTIA Security+, and </li>
+            </ol>
+            <li>Oh yeah, I also won access to SANS401: Network, Endpoint, and Cloud, which awards the DoD/U.S. Government Agency recognized GIAC GSEC, due to my awesome work in the Michigan Governor's High School Cyber Challenge on Cyberstart America (I already have the GFACT, so they gave me another SANS course)</li>
+          </ol>
+          <ol> <b>Opportunities in Progress</b>
+            <li>DoD Cybersecurity Scholarship, will be getting a response in a few months</li>
+            <li>SANS GSEC, going through the course and getting that credential</li>
+            <li>NCL Webinars, to give me more training</li>
+            <li>Mi pona e sona toki pona :)</li>
+          </ol>
+          </p>
+
+
+          <br> <br> <i style="font-size:medium;font-weight:500">Thursday, February 15th, 23:14 - C'est joli, n'est-ce pas? Tu descubras el nuevo mundo cuando abres los ojos.</i>
+          </p>
+
+    </div>
+    
     <br>
     <div class="blog_post" id="blog_post_five" style="font-size:large">
       <h2><i>October 31st & November 1st, 2023: The end of an EXTRAORDINARY Cybersecurity Awareness Month</i></h2>
